@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    triggers {
+        githubPush() // This listens for the webhook signal
+    }
     stages {
         stage('Install Dependencies') {
             steps {
